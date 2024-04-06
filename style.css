@@ -1,0 +1,113 @@
+/* Body */
+body {
+  margin: 100px;
+  margin-top: 64px;
+  overflow: hidden;
+  background-color: #202124;
+}
+
+/* Main */
+.main {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  height: 500px;
+  overflow: hidden;
+}
+.main .tree {
+  position: relative;
+  bottom: -255px;
+  width: 80px;
+  height: 80px;
+}
+/* Plane */
+.plane {
+  animation: slideToRight linear 5s infinite;
+}
+.plane img {
+  color: #202124;
+  width: 80px;
+  height: 80px;
+  /* margin-left: -80px; */
+}
+@keyframes slideToRight {
+  0% {
+    transform: translateX(-10%);
+  }
+  20% {
+    transform: translate(20%);
+  }
+  30% {
+    transform: translateX(30);
+  }
+  40% {
+    transform: translate(40%);
+  }
+  50% {
+    transform: translate(50%);
+  }
+  60% {
+    transform: translate(60%);
+  }
+  70% {
+    transform: translate(70%);
+  }
+  80% {
+    transform: translate(80%);
+  }
+  90% {
+    transform: translate(90%);
+  }
+  100% {
+    transform: translate(100%);
+  }
+}
+/* Text */
+.text {
+  /* Style related */
+  font-family: "Pixelify Sans", Arial;
+  font-weight: 500;
+  font-size: 28px;
+  /* Animation related */
+  position: relative;
+  animation: toBottom ease-out 5s infinite;
+  left: 38%;
+  bottom: -330px;
+}
+@keyframes toBottom {
+  0% {
+    bottom: -360px;
+    left: -200px;
+    transform: translateX(-100px);
+    transform: translateY(-400px);
+  }
+
+  20% {
+    bottom: -200px;
+    transform: translateX(50px);
+    transform: rotateZ(32deg);
+  }
+}
+
+/*
+  Paus and Play functionality
+*/
+#paus {
+  opacity: 0%;
+}
+.label > img {
+  position: relative;
+  bottom: -230px;
+  left: 90%;
+  width: 24px;
+  height: 24px;
+}
+#paus:checked ~ .label > img {
+  content: url("images/play.svg");
+}
+#paus:checked ~ .plane {
+  animation-play-state: paused;
+}
+#paus:checked ~ .text {
+  animation-play-state: paused;
+}
