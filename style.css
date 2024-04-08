@@ -1,4 +1,6 @@
-/* Body */
+/* ---------
+    Body 
+---------*/
 body {
   margin: 100px;
   margin-top: 64px;
@@ -6,7 +8,9 @@ body {
   background-color: #202124;
 }
 
-/* Main */
+/* ---------
+    Main 
+---------*/
 .main {
   background-color: #ffffff;
   border-radius: 12px;
@@ -14,61 +18,46 @@ body {
   height: 500px;
   overflow: hidden;
 }
-.main .tree {
+
+/* ---------
+    Tree 
+---------*/
+.tree {
   position: relative;
-  bottom: -255px;
+  bottom: -275px;
   width: 80px;
   height: 80px;
 }
-/* Plane */
+
+/* ---------
+    Plane 
+---------*/
 .plane {
-  animation: slideToRight linear 5s infinite;
-}
-.plane img {
+  position: relative;
   color: #202124;
   width: 80px;
   height: 80px;
-  /* margin-left: -80px; */
+  animation: slideToRight linear 5s infinite;
 }
 @keyframes slideToRight {
   0% {
-    transform: translateX(-10%);
-  }
-  20% {
-    transform: translate(20%);
-  }
-  30% {
-    transform: translateX(30);
-  }
-  40% {
-    transform: translate(40%);
-  }
-  50% {
-    transform: translate(50%);
-  }
-  60% {
-    transform: translate(60%);
-  }
-  70% {
-    transform: translate(70%);
-  }
-  80% {
-    transform: translate(80%);
-  }
-  90% {
-    transform: translate(90%);
+    left: -100px;
   }
   100% {
-    transform: translate(100%);
+    left: calc(100% - 80px);
   }
 }
-/* Text */
+
+/* ---------
+    Text 
+---------*/
 .text {
-  /* Style related */
+  /* Style */
   font-family: "Pixelify Sans", Arial;
   font-weight: 500;
   font-size: 28px;
-  /* Animation related */
+
+  /* Animation */
   position: relative;
   animation: toBottom ease-out 5s infinite;
   left: 38%;
@@ -89,25 +78,31 @@ body {
   }
 }
 
-/*
-  Paus and Play functionality
-*/
-#paus {
-  opacity: 0%;
-}
-.label > img {
+/* ---------
+    Paus and Play image 
+---------*/
+.input-label > .input-label_icon {
   position: relative;
-  bottom: -230px;
-  left: 90%;
+  bottom: -85%;
+  left: 95%;
   width: 24px;
   height: 24px;
 }
-#paus:checked ~ .label > img {
-  content: url("images/play.svg");
+
+/* ---------
+    Paus and Play functionality 
+---------*/
+#toggle {
+  opacity: 0%;
 }
-#paus:checked ~ .plane {
+#toggle:checked ~ .input-label > .input-label_icon {
+  content: url("/images/play.svg");
+}
+
+#toggle:checked ~ .plane {
   animation-play-state: paused;
 }
-#paus:checked ~ .text {
+
+#toggle:checked ~ .text {
   animation-play-state: paused;
 }
